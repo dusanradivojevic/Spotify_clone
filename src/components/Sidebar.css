@@ -1,0 +1,61 @@
+.sidebar {
+  background-color: black;
+  flex: 0.25;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.sidebar > img {
+  object-fit: contain;
+  width: 80%;
+  margin: 20px 0;
+  align-self: center;
+  cursor: pointer;
+}
+
+.sidebar__option {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.sidebar__option > h5 {
+  color: lightgray;
+  margin-left: 10px;
+}
+
+.sidebar__option > .MuiSvgIcon-root {
+  color: gray;
+}
+
+.sidebar__custom > .MuiSvgIcon-root {
+  color: lightgray;
+}
+
+.sidebar > h3 {
+  color: gray;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 18px;
+  margin: 15px 0 10px 20px;
+  letter-spacing: 1px;
+}
+
+.sidebar__playlists {
+  margin: 10px 0;
+
+  border-top: 1px solid rgb(35, 35, 35);
+  align-self: center;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  width: 80%;
+}
+
+.sidebar__playlists > p {
+  padding-top: 5px;
+  color: lightgray;
+}
