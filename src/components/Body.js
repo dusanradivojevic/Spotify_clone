@@ -5,8 +5,12 @@ import Avatar from "@material-ui/core/Avatar";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import PlayCircleFilledIcon from "@material-ui/icons/PlayCircleFilled";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
+import { useStateValue } from "../context/DataLayer";
+import Song from "./Song";
 
 function Body() {
+  const [{ user, discover_weekly }, dispatch] = useStateValue();
+
   return (
     <div className="body">
       <div className="body__header">
@@ -15,15 +19,17 @@ function Body() {
           <input placeholder="Search for Artists, Songs or Podcasts" />
         </div>
         <div className="body__header__avatar">
-          <Avatar alt="" src="" />
-          <p>Dusan</p>
+          <Avatar alt={user?.display_name} src={user?.images[0]?.url} />
+          <p>{user?.display_name}</p>
         </div>
       </div>
       <div className="body__center">
         <div className="body__center__image">
           <img
-            alt=""
-            src="https://i0.wp.com/post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/03/GettyImages-1092658864_hero-1024x575.jpg?w=1155&h=1528"
+            src={
+              "https://i0.wp.com/post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/03/GettyImages-1092658864_hero-1024x575.jpg?w=1155&h=1528"
+            }
+            alt={user?.display_name}
           />
           <p className="body__center__imageText">Your Discover Weekly</p>
         </div>
@@ -42,27 +48,20 @@ function Body() {
         <MoreHorizIcon />
       </div>
       <div className="body__playlists">
-        <div className="body__playlists__item">
-          <img
-            src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
-            alt=""
-          />
-          <div className="body__playlists__item__text">
-            <p className="title">Capturing Wind</p>
-            <p className="description">Jeff Bilma - Capturing Wild</p>
-          </div>
-        </div>
+        {discover_weekly?.tracks.items.map((item) => {
+          let description =
+            item.track.artists.map((artist) => artist.name).join(", ") +
+            "- " +
+            item.track.album.name;
 
-        <div className="body__playlists__item">
-          <img
-            src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
-            alt=""
-          />
-          <div className="body__playlists__item__text">
-            <p className="title">Capturing Wind</p>
-            <p className="description">Jeff Bilma - Capturing Wild</p>
-          </div>
-        </div>
+          return (
+            <Song
+              title={item.track.name}
+              desc={description}
+              image={item.track.album.images[0].url}
+            />
+          );
+        })}
       </div>
     </div>
   );

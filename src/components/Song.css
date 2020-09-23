@@ -1,0 +1,22 @@
+.song__playlists__item {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.song__playlists__item > img {
+  width: 35px;
+  height: 35px;
+  margin-right: 10px;
+}
+
+.song__playlists__item__text .title {
+  color: white;
+  font-weight: 600;
+}
+
+.song__playlists__item__text .description {
+  color: lightslategray;
+}

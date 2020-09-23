@@ -6,8 +6,12 @@ import ViewHeadlineOutlinedIcon from "@material-ui/icons/ViewHeadlineOutlined";
 import AddBoxIcon from "@material-ui/icons/AddBox";
 import CheckBoxIcon from "@material-ui/icons/CheckBox";
 import GetAppOutlinedIcon from "@material-ui/icons/GetAppOutlined";
+import SidebarOption from "./SidebarOption";
+import { useStateValue } from "../context/DataLayer";
 
 function Sidebar() {
+  const [{ playlists }, dispatch] = useStateValue();
+
   return (
     <div className="sidebar">
       <img
@@ -15,32 +19,24 @@ function Sidebar() {
         alt=""
       />
 
-      <div className="sidebar__option">
-        <HomeOutlinedIcon />
-        <h5>Home</h5>
-      </div>
-      <div className="sidebar__option">
-        <SearchOutlinedIcon />
-        <h5>Search</h5>
-      </div>
-      <div className="sidebar__option">
-        <ViewHeadlineOutlinedIcon />
-        <h5>Your Library</h5>
-      </div>
+      <SidebarOption Icon={HomeOutlinedIcon} title="Home" />
+      <SidebarOption Icon={SearchOutlinedIcon} title="Search" />
+      <SidebarOption Icon={ViewHeadlineOutlinedIcon} title="Your Library" />
 
       <h3>Playlists</h3>
 
-      <div className="sidebar__option sidebar__custom">
-        <AddBoxIcon fontSize="large" />
-        <h5>Create Playlist</h5>
-      </div>
-      <div className="sidebar__option sidebar__custom">
-        <CheckBoxIcon fontSize="large" color="secondary" />
-        <h5>Liked Songs</h5>
-      </div>
+      <SidebarOption
+        Icon={AddBoxIcon}
+        fontSize="large"
+        title="Create Playlist"
+      />
+      <SidebarOption Icon={CheckBoxIcon} fontSize="large" title="Liked Songs" />
 
       <div className="sidebar__playlists">
-        <p>Playlista </p>
+        {playlists?.items?.map((pl) => (
+          <p>{pl.name}</p>
+        ))}
+        <p>Playlista 1</p>
         <p>Playlista 1</p>
         <p>Playlista 1</p>
         <p>Playlista 1</p>
@@ -52,10 +48,11 @@ function Sidebar() {
         <p>Playlista 1</p>
       </div>
 
-      <div className="sidebar__option">
-        <GetAppOutlinedIcon />
-        <h5>Install App</h5>
-      </div>
+      <SidebarOption
+        Icon={GetAppOutlinedIcon}
+        fontSize="large"
+        title="Install App"
+      />
     </div>
   );
 }

@@ -1,7 +1,6 @@
 export const initialState = {
   user: null,
-  token:
-    "BQCgK8Ea-SYemKEk46IUYdq_2CWbJRVHmmKHtpn6aZrOCmfGyN4NvSqMxSm156EmMjXukOKDUBZmvR5RWypJNp5j_PJQCP9MN6giHl7kfcI8wLjO0FD5YIWv96J13ISN4h9trqM09U3bNtGClvUPXi-Pfjf0Edupzfar8VrKUJ46qL60",
+  token: null,
   playlists: [],
   song_playing: false,
   item: null,
@@ -19,6 +18,18 @@ const reducer = (state, action) => {
       return {
         ...state,
         token: action.token,
+      };
+
+    case "SET_PLAYLISTS":
+      return {
+        ...state,
+        playlists: action.playlists,
+      };
+
+    case "SET_DISCOVER_WEEKLY":
+      return {
+        ...state,
+        discover_weekly: action.discover_weekly,
       };
 
     default:
