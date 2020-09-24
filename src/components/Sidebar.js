@@ -36,16 +36,6 @@ function Sidebar() {
         {playlists?.items?.map((pl) => (
           <p>{pl.name}</p>
         ))}
-        <p>Playlista 1</p>
-        <p>Playlista 1</p>
-        <p>Playlista 1</p>
-        <p>Playlista 1</p>
-        <p>Playlista 1</p>
-        <p>Playlista 1</p>
-        <p>Playlista 1</p>
-        <p>Playlista 1</p>
-        <p>Playlista 1</p>
-        <p>Playlista 1</p>
       </div>
 
       <SidebarOption

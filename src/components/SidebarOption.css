@@ -5,7 +5,7 @@
   margin-bottom: 10px;
   cursor: pointer;
   transition: 200ms color ease-in;
-  color: grey;
+  color: lightgray;
 }
 
 .sidebarOption:hover {

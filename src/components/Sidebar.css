@@ -8,16 +8,25 @@
   overflow-y: overlay;
 }
 
+.sidebar::-webkit-scrollbar {
+  display: none;
+}
+
+.sidebar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
 .sidebar > img {
   object-fit: contain;
-  width: 80%;
+  width: 60%;
   margin: 20px auto;
   align-self: center;
   cursor: pointer;
 }
 
 .sidebar > h3 {
-  color: gray;
+  color: lightgray;
   text-transform: uppercase;
   font-weight: 600;
   font-size: 18px;
@@ -27,18 +36,15 @@
 
 .sidebar__playlists {
   margin: 10px auto;
+  padding-top: 10px;
   border-top: 1px solid rgb(35, 35, 35);
   align-self: center;
-  overflow-x: hidden;
-  overflow-y: overlay;
   width: 80%;
+  margin-bottom: 25px;
 }
 
 .sidebar__playlists > p {
   padding-top: 5px;
   color: lightgray;
-}
-
-.sidebar::-webkit-scrollbar {
-  display: none;
+  cursor: pointer;
 }

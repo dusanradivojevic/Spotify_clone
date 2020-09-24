@@ -5,6 +5,7 @@ import Avatar from "@material-ui/core/Avatar";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import PlayCircleFilledIcon from "@material-ui/icons/PlayCircleFilled";
 import MoreHorizIcon from "@material-ui/icons/MoreHoriz";
+import AccessTimeIcon from "@material-ui/icons/AccessTime";
 import { useStateValue } from "../context/DataLayer";
 import Song from "./Song";
 
@@ -27,7 +28,9 @@ function Body() {
         <div className="body__center__image">
           <img
             src={
-              "https://i0.wp.com/post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/03/GettyImages-1092658864_hero-1024x575.jpg?w=1155&h=1528"
+              discover_weekly?.images[0].url ||
+              "https://newjams-images.scdn.co/v2/discover-weekly/j2OIQgTGzXWHMKruHd7dh8zHaKvElaof-HU6_J9ouKevuqLuNf2YRrAxMHAKd8FXkHvjHs6h2PERUXZs9jkg4dOyfXTepX2KG7i2PA8QHLsCsWn1tBz8izgMLLDwcjPQhBYMpTlcJrWMfSvu09CDsQ==/MDU6MDA6NTBUNjEtMzAtMA==/default"
+              // "https://www.neoarmenia.com/wp-content/uploads/generic-user-icon-19.png"
             }
             alt={user?.display_name}
           />
@@ -47,22 +50,16 @@ function Body() {
         <FavoriteIcon fontSize="small" />
         <MoreHorizIcon />
       </div>
-      <div className="body__playlists">
-        {discover_weekly?.tracks.items.map((item) => {
-          let description =
-            item.track.artists.map((artist) => artist.name).join(", ") +
-            "- " +
-            item.track.album.name;
 
-          return (
-            <Song
-              title={item.track.name}
-              desc={description}
-              image={item.track.album.images[0].url}
-            />
-          );
-        })}
+      <div className="body__playlist">
+        <p className="body__playlist__item">#</p>
+        <p className="body__playlist__item">TITLE</p>
+        <p className="body__playlist__item">ALBUM</p>
+        <AccessTimeIcon className="body__playlist__item" />
       </div>
+      {discover_weekly?.tracks.items.map((item, index) => (
+        <Song track={item.track} index={index} />
+      ))}
     </div>
   );
 }

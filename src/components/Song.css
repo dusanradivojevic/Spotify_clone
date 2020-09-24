@@ -1,22 +1,46 @@
-.song__playlists__item {
-  display: flex;
+.song {
+  display: grid;
+  grid-template-columns: 5% 60% 30% 5%;
+  justify-content: flex-start;
   align-items: center;
-  margin-left: 20px;
-  margin-bottom: 20px;
-  cursor: pointer;
+  width: 97%;
+  /* margin-left: 20px;
+  margin-bottom: 20px; */
+  margin: 0 auto;
+  padding: 10px 0;
+  font-size: 14px;
 }
 
-.song__playlists__item > img {
+.song:hover {
+  cursor: pointer;
+  background-color: #373737;
+  opacity: 0.8;
+  padding-left: 10px;
+}
+
+.song_text {
+  display: flex;
+}
+
+.song_text > img {
   width: 35px;
   height: 35px;
   margin-right: 10px;
+  align-self: center;
 }
 
-.song__playlists__item__text .title {
+.song_text_text .title {
   color: white;
   font-weight: 600;
 }
 
-.song__playlists__item__text .description {
+.song_text_text .description {
   color: lightslategray;
+}
+
+.song_item {
+  color: antiquewhite;
+}
+.song_item:first-child {
+  justify-self: center;
 }

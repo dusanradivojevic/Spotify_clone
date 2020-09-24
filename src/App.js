@@ -36,16 +36,26 @@ function App() {
       });
 
       spotify.getUserPlaylists().then((playlists) => {
+        console.log(playlists);
         dispatch({
           type: "SET_PLAYLISTS",
           playlists: playlists,
         });
       });
 
-      spotify.getPlaylist("37i9dQZEVXcIJazRV9ISoM").then((dw) => {
+      spotify.getPlaylist("5E5PzbDTojETa4QMnmmerg").then((dw) => {
         dispatch({
           type: "SET_DISCOVER_WEEKLY",
           discover_weekly: dw,
+        });
+
+        dispatch({
+          type: "SET_PLAYING_SONG",
+          playing_song: {
+            url: dw?.tracks.items[0].track.album.images[0].url,
+            artist: dw?.tracks.items[0].track.artists[0].name,
+            name: dw?.tracks.items[0].track.name,
+          },
         });
       });
     }

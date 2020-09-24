@@ -1,4 +1,5 @@
 .body {
+  height: 100vh;
   flex: 0.8;
   background: rgb(123, 123, 200);
   background: linear-gradient(
@@ -6,7 +7,16 @@
     rgba(91, 87, 115, 1) 16%,
     rgba(2, 0, 36, 1) 100%
   );
-  overflow-y: overlay;
+  overflow-y: scroll;
+}
+
+.body::-webkit-scrollbar {
+  display: none;
+}
+
+.body {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 .body__header {
@@ -48,7 +58,8 @@
 }
 
 .body__center__image > img {
-  height: 20vw;
+  height: 15vw;
+  width: 20vw;
   z-index: -1;
   margin-left: 40px;
   box-shadow: 0 4px 60p rgba(0, 0, 0, 0.5);
@@ -88,18 +99,32 @@
 
 .body__buttons > .MuiSvgIcon-fontSizeLarge {
   font-size: 60px;
+  color: #1db954;
+  transition: transform 100ms ease-in;
+}
+
+.body__buttons > .MuiSvgIcon-fontSizeLarge:hover {
+  transform: scale(1.1);
 }
 
 .body__buttons > .MuiSvgIcon-fontSizeSmall {
   font-size: 30px;
 }
 
-.body__playlists {
-  display: flex;
-  flex-direction: column;
-  overflow-y: overlay;
+.body__playlist {
+  margin: 0 auto;
+  margin-bottom: 20px;
+  padding-bottom: 5px;
+  display: grid;
+  grid-template-columns: 5% 60% 30% 5%;
+  justify-content: flex-start;
+  color: antiquewhite;
+  font-size: 14px;
+  font-weight: 400;
+  border-bottom: 1px solid rgba(211, 211, 211, 0.233);
+  width: 97%;
 }
 
-.body::-webkit-scrollbar {
-  display: none;
+.body__playlist__item:first-child {
+  justify-self: center;
 }

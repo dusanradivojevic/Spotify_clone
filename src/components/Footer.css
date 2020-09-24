@@ -2,8 +2,8 @@
   position: fixed;
   bottom: 0;
   width: 97%;
-  height: 7vh;
-  background-color: #282828;
+  height: 5vh;
+  background-color: #474747;
   padding: 20px;
   display: flex;
   justify-content: space-between;
@@ -14,7 +14,6 @@
 .footer__left {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
   flex: 0.3;
   width: 300px;
 }
@@ -52,6 +51,10 @@
   color: white;
   justify-content: space-between;
   align-items: center;
+}
+
+.footer__icon {
+  cursor: pointer;
 }
 
 .footer__icon:hover {

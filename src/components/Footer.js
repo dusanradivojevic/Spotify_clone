@@ -8,21 +8,27 @@ import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import RepeatIcon from "@material-ui/icons/Repeat";
 import PlaylistPlayIcon from "@material-ui/icons/PlaylistPlay";
 import VolumeDownIcon from "@material-ui/icons/VolumeDown";
-import { Grid, Slider } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
+import { useStateValue } from "../context/DataLayer";
 
 function Footer() {
+  const [{ playing_song }, dispatch] = useStateValue();
+
   return (
     <div className="footer">
       <div className="footer__left">
         <img
-          src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
+          src={
+            playing_song?.url ||
+            "https://images.unsplash.com/photo-1541701494587-cb58502866ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80"
+          }
           alt=""
         />
         <div className="footer__songInfo">
-          <h4>Yeah!</h4>
-          <p>Usher</p>
+          <h4>{playing_song?.name || "Yeah!"}</h4>
+          <p>{playing_song?.artist || "Usher"}</p>
         </div>
-        <FavoriteBorderIcon />
+        <FavoriteBorderIcon className="footer__icon" />
       </div>
 
       <div className="footer__center">
@@ -36,13 +42,10 @@ function Footer() {
       <div className="footer__right">
         <Grid container spacing={2}>
           <Grid item>
-            <PlaylistPlayIcon />
+            <PlaylistPlayIcon className="footer__icon" />
           </Grid>
           <Grid item>
-            <VolumeDownIcon />
-          </Grid>
-          <Grid item xs>
-            <Slider />
+            <VolumeDownIcon className="footer__icon" />
           </Grid>
         </Grid>
       </div>
