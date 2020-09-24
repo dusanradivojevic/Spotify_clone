@@ -17,5 +17,5 @@ Application has user authentication implemented with Spotify API.
 IDE for development was Visual Studio Code.
 
 ## Live preview
-Application can be accessed by clicking [here](https://dusanradivojevic.github.io/Spotify_clone/).
+Application is hosted on Firebase and can be accessed by clicking [here](https://spotify-clone2-8d3aa.web.app).
 
