@@ -32,7 +32,7 @@ function Body() {
               "https://newjams-images.scdn.co/v2/discover-weekly/j2OIQgTGzXWHMKruHd7dh8zHaKvElaof-HU6_J9ouKevuqLuNf2YRrAxMHAKd8FXkHvjHs6h2PERUXZs9jkg4dOyfXTepX2KG7i2PA8QHLsCsWn1tBz8izgMLLDwcjPQhBYMpTlcJrWMfSvu09CDsQ==/MDU6MDA6NTBUNjEtMzAtMA==/default"
               // "https://www.neoarmenia.com/wp-content/uploads/generic-user-icon-19.png"
             }
-            alt={user?.display_name}
+            alt={user?.display_name || ""}
           />
           <p className="body__center__imageText">Your Discover Weekly</p>
         </div>
