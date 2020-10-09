@@ -15,3 +15,19 @@
 .sidebarOption > h5 {
   padding-left: 10px;
 }
+
+@media (max-width: 768px) {
+  .sidebarOption {
+    padding-left: 2vw;
+  }
+  .sidebarOption > h5 {
+    padding-left: 1vw;
+    font-size: 1.8vw;
+  }
+}
+
+@media (max-width: 590px) {
+  .sidebarOption > h5 {
+    display: none;
+  }
+}

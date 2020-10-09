@@ -60,7 +60,7 @@ function App() {
       });
     }
 
-    console.log("token >>> ", token_object);
+    // console.log("token >>> ", token_object);
   }, []);
 
   return (

@@ -44,3 +44,29 @@
 .song_item:first-child {
   justify-self: center;
 }
+
+@media (max-width: 768px) {
+  .song {
+    padding: 1vh 0;
+    font-size: 1.7vw;
+  }
+  .song_text > img {
+    width: 35px;
+    height: 35px;
+    margin-right: 2vw;
+  }
+}
+
+@media (max-width: 500px) {
+  .song_text > img {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media (max-width: 390px) {
+  .song_text > img {
+    width: 25px;
+    height: 25px;
+  }
+}

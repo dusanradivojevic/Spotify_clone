@@ -48,7 +48,7 @@ function Body() {
       <div className="body__buttons">
         <PlayCircleFilledIcon fontSize="large" />
         <FavoriteIcon fontSize="small" />
-        <MoreHorizIcon />
+        <MoreHorizIcon className="body__buttons__moreHoriz" />
       </div>
 
       <div className="body__playlist">

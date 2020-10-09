@@ -48,3 +48,32 @@
   color: lightgray;
   cursor: pointer;
 }
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 20vw;
+    min-width: 50px;
+  }
+
+  .sidebar__playlists > p {
+    font-size: 2vw;
+  }
+
+  .sidebar > h3 {
+    font-size: 2.2vw;
+  }
+}
+
+@media (max-width: 590px) {
+  .sidebar {
+    align-items: center;
+  }
+  .sidebar > h3 {
+    display: none;
+  }
+
+  .sidebar__playlists > p {
+    text-align: center;
+    font-size: 13px;
+  }
+}

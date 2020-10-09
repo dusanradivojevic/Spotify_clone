@@ -39,6 +39,7 @@
   border: none;
   margin-left: 5px;
   width: 100%;
+  overflow: hidden;
   outline: none;
 }
 
@@ -127,4 +128,83 @@
 
 .body__playlist__item:first-child {
   justify-self: center;
+}
+
+@media (max-width: 768px) {
+  .body__header {
+    margin: 30px 20px;
+  }
+
+  .body__header__searchbar {
+    width: 60%;
+    padding: 1vw;
+    height: 3vh;
+    min-height: 12px;
+  }
+
+  .body__header__avatar > .MuiAvatar-root {
+    height: 5vw;
+    width: 5vw;
+  }
+
+  .body__header__avatar > p {
+    font-size: 2.2vw;
+  }
+
+  .body__header__searchbar > input {
+    font-size: 1.8vw;
+  }
+
+  .body__center__description > h5 {
+    font-size: 2vw;
+  }
+
+  .body__center__description > h3 {
+    font-size: 3.5vw;
+  }
+
+  .body__center__description > p {
+    font-size: 1.8vw;
+  }
+
+  .body__buttons > .MuiSvgIcon-root {
+    margin-left: 2vw;
+    margin-top: 2.3vh;
+    margin-bottom: 2vh;
+  }
+
+  .body__buttons > .MuiSvgIcon-fontSizeLarge {
+    font-size: 8vw;
+  }
+
+  .body__buttons > .MuiSvgIcon-fontSizeSmall {
+    font-size: 4vw;
+  }
+
+  .body__buttons__moreHoriz {
+    font-size: 3vw !important;
+  }
+
+  .body__playlist {
+    font-size: 1.9vw;
+    margin-bottom: 1.5vh;
+    padding-bottom: 0.5vh;
+  }
+
+  .body__playlist__item:last-child {
+    font-size: 3vw;
+  }
+}
+
+@media (max-width: 590px) {
+  .body__header {
+    margin: 3vh 2vw;
+  }
+
+  .body__header__avatar > p {
+    font-size: 2.5vw;
+  }
+  .body__header__searchbar > input {
+    font-size: 2.1vw;
+  }
 }

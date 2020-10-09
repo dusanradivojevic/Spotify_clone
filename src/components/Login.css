@@ -30,3 +30,12 @@
   color: #1db954;
   transform: scale(1.03);
 }
+
+@media (max-width: 768px) {
+  .login > a > button {
+    height: 8vw;
+    min-height: 30px;
+    font-size: 2vw;
+    padding: 0 2.5vw;
+  }
+}
